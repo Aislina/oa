@@ -1,33 +1,21 @@
 package com.bwf.entity;
 
 import java.util.List;
-
 /**
  * 最基础的实体类
  * @author admin
- *
  */
 public class User {
+
+	public int userId;
+	public String username;
+	public String password;
+	public String nickname;
 	
-	
-	
-	
-	@Override
-	public String toString() {
-		return "User [userId=" + userId + ", username=" + username + ", gender=" + gender + ", score=" + score + "]";
-	}
-	public User() {
-		super();
-	}
-	
-	private Integer userId;
-	private String username;
-	private String gender;
-	private Integer score;
-	public Integer getUserId() {
+	public int getUserId() {
 		return userId;
 	}
-	public void setUserId(Integer userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 	public String getUsername() {
@@ -36,16 +24,21 @@ public class User {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public String getGender() {
-		return gender;
+	public String getPassword() {
+		return password;
 	}
-	public void setGender(String gender) {
-		this.gender = gender;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-	public Integer getScore() {
-		return score;
+	public String getNickname() {
+		return nickname;
 	}
-	public void setScore(Integer score) {
-		this.score = score;
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", username=" + username + ", password=" + password + ", nickname=" + nickname
+				+ "]";
 	}
 }
