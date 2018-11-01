@@ -17,8 +17,8 @@
 		<slf4j.version>1.8.0-beta2</slf4j.version>
 	</properties>
   
-  <dependencies>
-     
+ 
+  <dependencies>     
      <!-- junit单元测试 -->
      <dependency>  
          <groupId>junit</groupId>  
@@ -141,10 +141,12 @@
 	    <groupId>org.slf4j</groupId>
 	    <artifactId>slf4j-log4j12</artifactId>
 	    <version>1.8.0-beta2</version>
-	    <scope>test</scope>
+	    <!-- <scope>test</scope>-->
 	</dependency>
     
   </dependencies>
+  
+  
   <build>
     <finalName>oa</finalName>
     	<plugins>
@@ -168,6 +170,7 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+			
 			<!-- 集成Tomcat插件 -->
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
