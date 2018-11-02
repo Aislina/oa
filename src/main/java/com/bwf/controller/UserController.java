@@ -18,7 +18,6 @@ public class UserController {
 	
 	@Autowired
 	IUserService userService;
-	
 	@GetMapping("login")
 	public String login( ){
 		return "user/login";
@@ -30,19 +29,25 @@ public class UserController {
 		
 		//密码加密
 		user.setPassword ( StringUtils.md5 ( user.getPassword ( ) ) );
-		logger.info("password: {}"+user.getPassword());
+		logger.info("password:{}",user.getPassword());
+
 		
 		//执行登录功能
 		User loginUser=userService.login( user );
-			if ( loginUser == null ){
+			if ( loginUser == null ) {
 				//登录失败
 				logger.info("failed");
+				//跳转到登录界面(枚举“1”表示登陆错误)
+				return "redirect:/user/login?error=1";
 			}
 			else{
 				//登录成功
-				logger.info("succed");
-			}
-		
-		return "user/dologin";
+				logger.info("succeed");
+				//登录后的状态   要保存下来  所以要写入session
+				
+				
+				//跳转到首页（index页面的index方法）
+				return "redirect:/index";
+			}			
 	}
 }
