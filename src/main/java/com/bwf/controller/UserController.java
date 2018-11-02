@@ -1,5 +1,7 @@
 package com.bwf.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +26,7 @@ public class UserController {
 	}
 	
 	@PostMapping("dologin")
-	public String dologin( User user){			
+	public String dologin( User user,HttpSession session){			
 		logger.info("{}, {}" , user.getUsername() , user.getPassword());
 		
 		//密码加密
@@ -43,8 +45,12 @@ public class UserController {
 			else{
 				//登录成功
 				logger.info("succeed");
-				//登录后的状态   要保存下来  所以要写入session
 				
+				//登录后的状态   要保存下来  所以要写入session
+				session.setAttribute("user", loginUser);
+				
+				//跳转前先写入控制器  控制器用来渲染和分配页面
+				//IndexController
 				
 				//跳转到首页（index页面的index方法）
 				return "redirect:/index";
