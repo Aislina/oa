@@ -50,7 +50,6 @@ public class UserController {
 				session.setAttribute("user", loginUser);
 				
 				//跳转前先写入控制器  控制器用来渲染和分配页面
-				//IndexController
 				
 				//跳转到首页（index页面的index方法）
 				return "redirect:/index";
