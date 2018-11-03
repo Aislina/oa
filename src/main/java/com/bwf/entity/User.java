@@ -1,6 +1,4 @@
 package com.bwf.entity;
-
-import java.util.List;
 /**
  * 最基础的实体类
  * @author admin

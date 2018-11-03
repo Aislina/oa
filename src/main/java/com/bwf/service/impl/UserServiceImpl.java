@@ -13,8 +13,7 @@ public class UserServiceImpl implements IUserService {
 	UserMapper userMapper;
 	
 	@Override
-	public User login(User user) {
-		
+	public User login(User user) {		
 		return userMapper.getUserByUsernameAndPassword( user);
 	}
 }
