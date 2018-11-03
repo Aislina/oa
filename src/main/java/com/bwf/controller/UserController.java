@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +22,8 @@ public class UserController {
 	@Autowired
 	IUserService userService;
 	@GetMapping("login")
-	public String login( ){
+	public String login(Integer error,ModelMap modelMap ){
+		modelMap.addAttribute("error",error);
 		return "user/login";
 	}
 	
