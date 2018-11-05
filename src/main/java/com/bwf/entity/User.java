@@ -5,10 +5,11 @@ package com.bwf.entity;
  */
 public class User {
 
-	public int userId;
-	public String username;
-	public String password;
-	public String nickname;
+	private int userId;
+	private String username;
+	private String password;
+	private String nickname;
+	private String avater;
 	
 	public int getUserId() {
 		return userId;
@@ -38,5 +39,11 @@ public class User {
 	public String toString() {
 		return "User [userId=" + userId + ", username=" + username + ", password=" + password + ", nickname=" + nickname
 				+ "]";
+	}
+	public String getAvater() {
+		return avater;
+	}
+	public void setAvater(String avater) {
+		this.avater = avater;
 	}
 }

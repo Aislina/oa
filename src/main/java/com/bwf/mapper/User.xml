@@ -25,8 +25,11 @@
     
     <update id="update" parameterType="com.bwf.entity.User">
     	update `user` set 
-    		username = #{username} , password = #{password} , 
-    		nickname = #{nickname} ,leader_id = #{leaderId} , avater = #{avater}
+    		username = #{username} , 
+    		password = #{password} , 
+    		nickname = #{nickname} ,
+    		leader_id = #{leaderId} , 
+    		avater = #{avater}
     	where user_id = #{userId}
     </update>   
 </mapper>

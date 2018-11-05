@@ -1,7 +1,6 @@
 package com.bwf.controller;
 
 import javax.servlet.http.HttpSession;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +20,15 @@ public class UserController {
 	
 	@Autowired
 	IUserService userService;
+	
+	//显示登录界面
 	@GetMapping("login")
 	public String login(Integer error,ModelMap modelMap ){
 		modelMap.addAttribute("error",error);
 		return "user/login";
 	}
 	
+	//进行登录
 	@PostMapping("dologin")
 	public String dologin( User user,HttpSession session){			
 		logger.info("{}, {}" , user.getUsername() , user.getPassword());
@@ -55,6 +57,13 @@ public class UserController {
 				
 				//跳转到首页（index页面的index方法）
 				return "redirect:/index";
-			}			
+			}				
+	}
+	
+	//退出登录
+	@GetMapping("logout")
+	public String logout ( HttpSession session ){
+		session.removeAttribute("user");
+		return "redirect:/user/login";		
 	}
 }
