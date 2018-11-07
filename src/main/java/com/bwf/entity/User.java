@@ -1,4 +1,7 @@
 package com.bwf.entity;
+
+import java.util.List;
+
 /**
  * 最基础的实体类
  * @author admin
@@ -10,6 +13,7 @@ public class User {
 	private String password;
 	private String nickname;
 	private String avater;
+	private List<com.bwf.entity.Menu>menus;
 	
 	public int getUserId() {
 		return userId;
